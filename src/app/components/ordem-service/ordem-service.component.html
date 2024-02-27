@@ -1,1 +1,70 @@
-<p>ordem-service works!</p>
+<main>
+  <div class="ordens-container flex justify-end mr-3">
+    <div class="flex items-center pt-5 gap-4">
+      <div>
+        <button class="font-semibold">imprimir</button>
+      </div>
+      <div>
+        <button
+          class="bg-slate-500 font-semibold p-2 rounded-md text-white"
+          (click)="incluirOrdem()"
+        >
+          incluir ordem de serviço
+        </button>
+        @if(this.visible){
+        <div class="open-ordens">
+          <button (click)="incluirOrdem()" class="underline pb-5">
+            Fechar
+          </button>
+          <h1 class="font-semibold">Nova ordem de serviço</h1>
+          <form></form>
+        </div>
+        }
+      </div>
+      <div>
+        <button class="font-semibold">mais acões</button>
+      </div>
+    </div>
+  </div>
+  <div class="card mr-3 mt-5 p-2">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Ordem</th>
+          <th scope="col">Prioridade</th>
+          <th scope="col">Login</th>
+          <th scope="col">Periodo</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Servico</th>
+          <th scope="col">Problema</th>
+          <th scope="col">Status</th>
+          <th scope="col">Endereço</th>
+          <th scope="col">Cidade</th>
+        </tr>
+      </thead>
+      @for(order of orders; track $index ){
+      <tbody>
+        <tr>
+          <a href="#" class="underline"
+            ><td>{{ order.ordem }}</td></a
+          >
+          @if(order.prioridade === 'alta'){
+          <td class="bg-red-500 text-white">{{ order.prioridade }}</td>
+          }@else{
+          <td>{{ order.prioridade }}</td>
+          }
+          <td>{{ order.login }}</td>
+          <td>{{ order.periodo }}</td>
+          <td>{{ order.nome }}</td>
+          <td>{{ order.servico }}</td>
+          <td>{{ order.tipoServico }}</td>
+          <td>{{ order.status }}</td>
+          <td>{{ order.endereco }}</td>
+          <td>{{ order.city }}</td>
+        </tr>
+      </tbody>
+      }
+    </table>
+    <p class="mt-3">Total de ordens: {{ totalOrders }}</p>
+  </div>
+</main>

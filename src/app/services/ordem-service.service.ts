@@ -1,10 +1,13 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+const URL = 'https://orderagendyapi.onrender.com/api/v1/orders';
 @Injectable({
   providedIn: 'root',
 })
 export class OrdemServiceService {
-  http = Inject(HttpClient);
+  constructor(private http: HttpClient) {}
 
-  constructor() {}
+  fetchOrders() {
+    return this.http.get(URL);
+  }
 }

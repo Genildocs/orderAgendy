@@ -1,1 +1,29 @@
-<p>side-bar works!</p>
+<div class="side-container bg-slate-50">
+  <div class="side-bar pl-3 pr-3">
+    <div class="flex flex-col items-center pt-2 pb-5">
+      <h1 class="logo text-2xl font-semibold">OrderAgendy</h1>
+    </div>
+    <div>
+      <button class="btn-sidebar">
+        <h2 class="font-semibold flex items-center gap-2">
+          <i class="pi pi-home" style="font-size: 1.2rem"></i>
+          <span>Dashboard</span>
+        </h2>
+      </button>
+    </div>
+    <div class="apps">
+      <span class="font-bold bg-slate-400 w-full block pt-2 pb-2">APPS</span>
+      <ul>
+        <li>
+          <a routerLink="/ordens" routerLinkActive="active">
+            Ordens de serviço
+          </a>
+        </li>
+        <li>
+          <a routerLink="/agenda" routerLinkActive="active"> Agenda </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
