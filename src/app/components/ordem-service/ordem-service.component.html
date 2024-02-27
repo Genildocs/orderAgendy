@@ -17,7 +17,7 @@
             Fechar
           </button>
           <h1 class="font-semibold">Nova ordem de serviço</h1>
-          <form></form>
+          <app-form-agendamento></app-form-agendamento>
         </div>
         }
       </div>
@@ -40,6 +40,7 @@
           <th scope="col">Status</th>
           <th scope="col">Endereço</th>
           <th scope="col">Cidade</th>
+          <th scope="col">Agendamento</th>
         </tr>
       </thead>
       @for(order of orders; track $index ){
@@ -61,6 +62,7 @@
           <td>{{ order.status }}</td>
           <td>{{ order.endereco }}</td>
           <td>{{ order.city }}</td>
+          <td>{{ order.agendamento }}</td>
         </tr>
       </tbody>
       }

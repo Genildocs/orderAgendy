@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { TableModule } from 'primeng/table';
 import { OrdemServiceService } from '../../services/ordem-service.service';
+import { FormAgendamentoComponent } from '../form-agendamento/form-agendamento.component';
 @Component({
   selector: 'app-ordem-service',
   standalone: true,
-  imports: [TableModule],
+  imports: [FormAgendamentoComponent],
   templateUrl: './ordem-service.component.html',
   styleUrl: './ordem-service.component.css',
 })
