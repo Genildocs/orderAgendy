@@ -1,4 +1,5 @@
 <main>
+  <h3 class="font-bold text-lg pt-2">APPS - Ordens de Serviço</h3>
   <div class="ordens-container flex justify-end mr-3">
     <div class="flex items-center pt-5 gap-4">
       <div>
@@ -16,7 +17,7 @@
           <button (click)="incluirOrdem()" class="underline pb-5">
             Fechar
           </button>
-          <h1 class="font-semibold">Nova ordem de serviço</h1>
+          <h1 class="font-semibold text-lg">Nova ordem de serviço:</h1>
           <app-form-agendamento></app-form-agendamento>
         </div>
         }
@@ -65,6 +66,8 @@
           <td>{{ order.agendamento }}</td>
         </tr>
       </tbody>
+      }@empty {
+      <p>Buscando ordem de serviço</p>
       }
     </table>
     <p class="mt-3">Total de ordens: {{ totalOrders }}</p>

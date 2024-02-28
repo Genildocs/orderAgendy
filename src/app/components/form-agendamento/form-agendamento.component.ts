@@ -9,5 +9,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class FormAgendamentoComponent {
   loginInput: string = '';
+  nomeInput: string = '';
   constructor() {}
 }
