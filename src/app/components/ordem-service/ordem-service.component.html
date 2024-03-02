@@ -59,9 +59,13 @@
           <td>{{ order.periodo }}</td>
           <td>{{ order.nome }}</td>
           <td>{{ order.servico }}</td>
+          @if(order.tipoServico === 'Instalacao'){
+          <td>null</td>
+          }@else{
           <td>{{ order.tipoServico }}</td>
+          }
           <td>{{ order.status }}</td>
-          <td>{{ order.endereco }}</td>
+          <td>{{ order.rua }}</td>
           <td>{{ order.city }}</td>
           <td>{{ order.agendamento }}</td>
         </tr>
