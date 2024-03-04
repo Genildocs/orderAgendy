@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdemServiceService } from '../../services/ordem-service.service';
 import { FormAgendamentoComponent } from '../form-agendamento/form-agendamento.component';
+import { OrdemInterface } from '../../interfaces/ordem-interface';
 @Component({
   selector: 'app-ordem-service',
   standalone: true,
@@ -10,7 +11,7 @@ import { FormAgendamentoComponent } from '../form-agendamento/form-agendamento.c
 })
 export class OrdemServiceComponent implements OnInit {
   visible: boolean = false;
-  orders: any;
+  orders: OrdemInterface[] = [];
   totalOrders: number = 0;
 
   constructor(private ordemService: OrdemServiceService) {}
@@ -26,7 +27,7 @@ export class OrdemServiceComponent implements OnInit {
         this.totalOrders = orders.results;
         console.log('Ordens', this.totalOrders);
       },
-      error: (err: any) => console.log('Erro ao filtrar ordens', err),
+      error: (err: string) => console.log('Erro ao filtrar ordens', err),
     });
   }
   incluirOrdem() {

@@ -5,7 +5,8 @@
       type="text"
       name="ordem"
       id="ordem"
-      class="form-control"
+      pInputText
+      [(ngModel)]="value"
       placeholder="insert orden number"
     />
   </div>
@@ -15,20 +16,16 @@
       type="text"
       name="login"
       id="login"
+      pInputText
       [(ngModel)]="loginInput"
-      class="form-control mr-3"
     />
     <label for="nome">Nome: </label>
     <input
       type="text"
       name="nome"
       id="nome"
+      pInputText
       [(ngModel)]="nomeInput"
-      class="form-control"
     />
   </div>
-  <!-- <div class="form-group">
-    <label for="data">Agendar para: </label>
-    <input type="date" name="data" id="data" class="form-control" />
-  </div> -->
 </form>
