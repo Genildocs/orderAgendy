@@ -1,18 +1,18 @@
 <form class="form-agendamento mt-4">
-  <div class="form-group mb-5">
-    <label for="ordem">Ordem </label>
-    <input
-      type="text"
-      name="ordem"
-      id="ordem"
-      class="block p-1"
-      pInputText
-      [(ngModel)]="value"
-      placeholder="insert orden number"
-    />
-  </div>
-  <div class="form-group mb-2">
-    <div class="mb-5">
+  <div class="grid-form mb-5">
+    <div class="form-group">
+      <label for="ordem">Ordem </label>
+      <input
+        type="text"
+        name="ordem"
+        id="ordem"
+        class="block p-1"
+        pInputText
+        [(ngModel)]="value"
+        placeholder="insert orden number"
+      />
+    </div>
+    <div>
       <label for="login">Login </label>
       <input
         type="text"
@@ -23,7 +23,7 @@
         [(ngModel)]="loginInput"
       />
     </div>
-    <div class="mb-5">
+    <div>
       <label for="nome">Nome </label>
       <input
         type="text"
@@ -34,6 +34,65 @@
         [(ngModel)]="nomeInput"
       />
     </div>
+    <div>
+      <label for="nome">Rua </label>
+      <input
+        type="text"
+        name="rua"
+        id="rua"
+        class="w-full p-1"
+        pInputText
+        [(ngModel)]="ruaInput"
+      />
+    </div>
+    <div>
+      <p>Cidade</p>
+      <p-dropdown
+        [options]="cities"
+        [(ngModel)]="selectedCity"
+        optionLabel="name"
+        name="city"
+        [showClear]="true"
+        placeholder="Select a City"
+        class="p-1"
+      ></p-dropdown>
+    </div>
+    <div>
+      <p>Periodo</p>
+      <p-dropdown
+        [options]="periodo"
+        [(ngModel)]="selectedPeriod"
+        optionLabel="name"
+        name="periodo"
+        [showClear]="true"
+        placeholder="Select period"
+        class="p-1"
+      ></p-dropdown>
+    </div>
+    <div>
+      <p>Prioridade</p>
+      <p-dropdown
+        [options]="prioridade"
+        [(ngModel)]="selectedPriority"
+        optionLabel="name"
+        name="prioridade"
+        [showClear]="true"
+        placeholder="Select Priority"
+        class="p-1"
+      ></p-dropdown>
+    </div>
+    <div>
+      <label for="nome">Agendamento </label>
+      <input
+        type="date"
+        name="date"
+        id="date"
+        class="w-full p-1"
+        pInputText
+        [(ngModel)]="dateInput"
+      />
+    </div>
   </div>
-  <p-button label="Submit" [loading]="loading" (onClick)="load()"></p-button>
+
+  <p-button label="Submit" (onClick)="postOrder()"></p-button>
 </form>

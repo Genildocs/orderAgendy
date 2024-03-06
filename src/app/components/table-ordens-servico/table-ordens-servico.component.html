@@ -1,0 +1,51 @@
+<div class="card">
+  <p-table [value]="orders" [tableStyle]="{ 'min-width': '60rem' }">
+    <ng-template pTemplate="caption">
+      <div class="flex items-center justify-between md:text-[13px]">
+        Ordens
+        <p-button icon="pi pi-refresh"></p-button>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr class="md:text-[13px]">
+        @for(table of tableHeader; track $index){
+        <th>{{ table }}</th>
+        }
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-orders>
+      <tr class="md:text-[12px]">
+        <td>
+          <a
+            [routerLink]="['/form', orders.ordem]"
+            routerLinkActive="active"
+            class="underline"
+            >{{ orders.ordem }}</a
+          >
+        </td>
+        <td>{{ orders.prioridade.toUpperCase() }}</td>
+        <td>{{ orders.login }}</td>
+        <td>{{ orders.periodo.toUpperCase() }}</td>
+        <td>{{ orders.nome }}</td>
+        <td>{{ orders.servico }}</td>
+        <td>{{ orders.tipoServico }}</td>
+        <td>
+          <p-tag
+            [value]="orders.status"
+            [severity]="getSeverity(orders.status)"
+          ></p-tag>
+        </td>
+        <td>{{ orders.rua }}</td>
+        <td>{{ orders.city }}</td>
+        <td>{{ orders.agendamento }}</td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div
+        class="flex align-items-center justify-content-between md:text-[13px]"
+      >
+        Total de: {{ orders ? orders.length : 0 }} ordens.
+      </div>
+    </ng-template>
+  </p-table>
+</div>

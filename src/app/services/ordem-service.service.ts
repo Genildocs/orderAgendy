@@ -10,4 +10,8 @@ export class OrdemServiceService {
   fetchOrders() {
     return this.http.get(URL);
   }
+
+  postOrder(order: any) {
+    return this.http.post(URL, order);
+  }
 }

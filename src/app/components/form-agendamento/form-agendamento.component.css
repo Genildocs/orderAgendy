@@ -11,3 +11,10 @@
   flex-direction: column;
   align-items: flex-start;
 }
+
+.grid-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 100px;
+  row-gap: 10px;
+}
