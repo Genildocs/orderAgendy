@@ -1,31 +1,39 @@
 <form class="form-agendamento mt-4">
-  <div class="form-group mb-2">
-    <label for="ordem">Ordem: </label>
+  <div class="form-group mb-5">
+    <label for="ordem">Ordem </label>
     <input
       type="text"
       name="ordem"
       id="ordem"
+      class="block p-1"
       pInputText
       [(ngModel)]="value"
       placeholder="insert orden number"
     />
   </div>
   <div class="form-group mb-2">
-    <label for="login">Login: </label>
-    <input
-      type="text"
-      name="login"
-      id="login"
-      pInputText
-      [(ngModel)]="loginInput"
-    />
-    <label for="nome">Nome: </label>
-    <input
-      type="text"
-      name="nome"
-      id="nome"
-      pInputText
-      [(ngModel)]="nomeInput"
-    />
+    <div class="mb-5">
+      <label for="login">Login </label>
+      <input
+        type="text"
+        name="login"
+        id="login"
+        class="block p-1"
+        pInputText
+        [(ngModel)]="loginInput"
+      />
+    </div>
+    <div class="mb-5">
+      <label for="nome">Nome </label>
+      <input
+        type="text"
+        name="nome"
+        id="nome"
+        class="w-full p-1"
+        pInputText
+        [(ngModel)]="nomeInput"
+      />
+    </div>
   </div>
+  <p-button label="Submit" [loading]="loading" (onClick)="load()"></p-button>
 </form>
