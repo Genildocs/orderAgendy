@@ -1,5 +1,9 @@
 <div class="form-pronto">
-  @for(order of newOrder; track $index ){ @if(order === orderNumber){
-  <h1 class="font-semibold text-lg">Ordem numero: {{ order.ordem }}</h1>
-  } }
+  @for(order of newOrder; track $index ){
+  <p>
+    Ordem: @if(getId(order._id)._id !== order._id) {
+    {{ order.ordem }}
+    }
+  </p>
+  }
 </div>

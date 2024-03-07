@@ -13,24 +13,27 @@ import { ActivatedRoute } from '@angular/router';
 export class FormProntoComponent {
   newOrder!: any[];
   orderNumber!: string;
-  constructor(
-    private ordemService: OrdemServiceService,
-    private route: ActivatedRoute
-  ) {}
+  orderId!: any[];
+  constructor(private ordemService: OrdemServiceService) {}
 
   ngOnInit(): void {
     this.getOrders();
-    this.route.params.subscribe((params) => {
-      this.orderNumber = params['orderNumber'];
-    });
   }
 
   getOrders() {
     this.ordemService.fetchOrders().subscribe({
       next: (orders: any) => {
         this.newOrder = orders.data;
+        this.orderId = this.newOrder;
+        console.log(this.orderId);
       },
       error: (err: string) => console.log('Erro ao filtrar ordens', err),
     });
+  }
+
+  getId(id: string) {
+    const find = this.orderId.find((item) => item._id === id);
+    console.log(find);
+    return find !== undefined ? find : null;
   }
 }

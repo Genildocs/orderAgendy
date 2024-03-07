@@ -16,12 +16,7 @@
     <ng-template pTemplate="body" let-orders>
       <tr class="md:text-[12px]">
         <td>
-          <a
-            [routerLink]="['/form', orders.ordem]"
-            routerLinkActive="active"
-            class="underline"
-            >{{ orders.ordem }}</a
-          >
+          <a routerLink="/form" class="underline">{{ orders.ordem }}</a>
         </td>
         <td>{{ orders.prioridade.toUpperCase() }}</td>
         <td>{{ orders.login }}</td>

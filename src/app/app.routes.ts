@@ -3,7 +3,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { OrdemServiceComponent } from './components/ordem-service/ordem-service.component';
 import { AgendaComponent } from './components/agenda/agenda.component';
 import { FormProntoComponent } from './components/form-pronto/form-pronto.component';
-import { DashboardComponent } from './layout/dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 export const routes: Routes = [
   {
@@ -21,7 +21,7 @@ export const routes: Routes = [
         title: 'OrderAgendy - Agenda',
         component: AgendaComponent,
       },
-      { path: 'form/:orderNumber', component: FormProntoComponent },
+      { path: 'form', component: FormProntoComponent },
       {
         path: 'dashboard',
         title: 'OrderAgendy - Dashboard',
